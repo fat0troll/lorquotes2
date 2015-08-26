@@ -1,0 +1,23 @@
+ru:
+  messages:
+    title: 'LORQuotes - Цитатник linux.org.ru'
+  menu:
+    logo: 'ЛОР-Quotes'
+    greeting: 'Добро пожаловать, %{username}.'
+    links:
+      non_approved: 'Неподтверждённые'
+      stats: 'Статистика'
+      add_quote: 'Добавить цитату'
+      search: 'Поиск'
+      fortunes: 'В фортунки!'
+      talks: 'Толксы'
+      about: 'О сайте'
+      tools: 'Тулзы'
+    user:
+      actions:
+        login: 'Войти'
+        register: 'Зарегистрироваться'
+        settings: 'Настройки'
+        logout: 'Выйти'
+  strings:
+    welcome_html: 'На этом сайте собраны лучшие цитаты от членов Клуба Пользователей Линукс <a href="https://linux.org.ru">Linux.Org.Ru</a> (далее сокращенно ЛОР). Издревле ЛОР славился своими жаркими баталиями и мастерской клоунадой. Думаем, вы немало посмеетесь над остроумием, а подчас и глупостью линуксоидов и иже с ними.'
