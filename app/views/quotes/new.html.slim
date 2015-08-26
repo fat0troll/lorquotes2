@@ -1,0 +1,37 @@
+div.panel.panel-default
+  div.panel-heading
+    h4
+      = t 'quote.add.title'
+    p
+      = t 'quote.add.rules_header'
+
+    ul
+      = t 'quote.add.rules_html'
+
+  div.panel-body
+    div.errors
+    - if @quote.errors.any?
+      ul
+      - @quote.errors.full_messages.each do |msg|
+        li= msg
+
+    = form_for @quote do |f|
+
+      div.form-group
+        = f.label :trivia
+        = f.text_area :trivia, :class => 'form-control'
+
+      div.form-group
+        = f.label :author
+        = f.text_field :author, :class => 'form-control'
+
+      div.form-group
+        = f.label :writedate
+        = f.text_field :writedate, :class => 'form-control'
+
+      div.form_group
+        = f.label :link
+        = f.text_field :link, :class => 'form-control'
+
+      hr
+      = f.submit((t 'quote.add.action'), :class => 'btn btn-primary')

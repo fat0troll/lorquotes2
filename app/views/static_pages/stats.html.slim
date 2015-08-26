@@ -1,0 +1,20 @@
+h4
+  = t 'strings.stats.title'
+
+table.table.table-bordered.table-condensed
+  thead
+    tr
+      th
+        = t 'strings.stats.nickname'
+
+      th
+        = t 'strings.stats.count'
+
+  tbody
+    - @stats.each do |row|
+      tr
+        td
+          = link_to(row[0], "/quotes/by_author/#{row[0]}")
+
+        td
+          = row[1]

@@ -1,7 +1,7 @@
+h4
+  = t 'strings.by_author.title', :author => @author
 p
-  = t 'strings.home.welcome_html'
-p
-  = t 'strings.home.quotes_count', :count => @count
+  = t 'strings.by_author.quotes_count', :count => @count
 
 = will_paginate @quotes, renderer: BootstrapPagination::Rails
 
@@ -17,8 +17,8 @@ p
         = link_to '*', '#'
         | )&nbsp;
         = q.writedate.strftime('%d.%m.%Y %H:%M:%S')
-      | &nbsp;(
-      = link_to((t 'quote.link'), q.link)
-      | )
+        | &nbsp;(
+        = link_to((t 'quote.link'), q.link)
+        | )
 
 = will_paginate @quotes, renderer: BootstrapPagination::Rails

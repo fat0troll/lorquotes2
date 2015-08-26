@@ -6,6 +6,12 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'static_pages#home'
 
+  get 'stats/' => 'static_pages#stats', as: :stats
+
+  get 'quotes/awaiting' => 'quotes#awaiting', as: :awaiting_quotes
+  get 'quotes/by_author/:author' => 'quotes#by_author', as: :author_quotes
+  resources :quotes
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
