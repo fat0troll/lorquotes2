@@ -3,7 +3,7 @@ ru:
     title: 'LORQuotes - Цитатник linux.org.ru'
   menu:
     logo: 'ЛОР-Quotes'
-    greeting: 'Добро пожаловать, %{username}.'
+    greeting: 'Добро пожаловать, %{username}'
     links:
       non_approved: 'Неподтверждённые'
       stats: 'Статистика'
@@ -21,3 +21,10 @@ ru:
         logout: 'Выйти'
   strings:
     welcome_html: 'На этом сайте собраны лучшие цитаты от членов Клуба Пользователей Линукс <a href="https://linux.org.ru">Linux.Org.Ru</a> (далее сокращенно ЛОР). Издревле ЛОР славился своими жаркими баталиями и мастерской клоунадой. Думаем, вы немало посмеетесь над остроумием, а подчас и глупостью линуксоидов и иже с ними.'
+    quotes_count: 'Сейчаc количество цитат в нашей коллекции составляет %{count}. Наслаждайтесь!'
+  quote:
+    link: 'Источник'
+  will_paginate:
+    previous_label: "&#8592;"
+    next_label: "&#8594;"
+    page_gap: "&hellip;"

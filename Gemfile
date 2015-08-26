@@ -54,3 +54,7 @@ gem "twitter-bootstrap-rails"
 # users handling for lazy one
 gem "devise"
 gem 'devise-bootstrap-views'
+
+# paginator
+gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-bootstrap'

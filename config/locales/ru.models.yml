@@ -9,3 +9,11 @@ ru:
         password_confirmation: 'Подтверждение пароля'
         current_password: 'Текущий пароль'
         remember_me: 'Запомнить меня'
+      quote:
+        trivia: 'Текст цитаты'
+        author: 'Автор цитаты на ЛОРе'
+        writedate: 'Дата написания (в формате DD.MM.YYYY hh:mm:ss)'
+        link: 'Ссылка на сообщение'
+        approved: 'Подтверждена'
+        approver: 'Подтвердил'
+        

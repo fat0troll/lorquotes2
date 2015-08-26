@@ -1,2 +1,24 @@
 p
   = t 'strings.welcome_html'
+p
+  = t 'strings.quotes_count', :count => @count
+
+= will_paginate @quotes, renderer: BootstrapPagination::Rails
+
+- @quotes.each do |q|
+  div.well
+    p
+      = simple_format q.trivia
+
+    p
+      em
+        = q.author
+        | &nbsp;(
+        = link_to '*', '#'
+        | )&nbsp;
+        = q.writedate.strftime('%d.%m.%Y %H:%M:%S')
+      | &nbsp;(
+      = link_to((t 'quote.link'), q.link)
+      | )
+
+= will_paginate @quotes, renderer: BootstrapPagination::Rails
