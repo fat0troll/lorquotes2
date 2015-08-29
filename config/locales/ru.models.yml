@@ -17,3 +17,7 @@ ru:
         approved: 'Подтверждена'
         approver: 'Подтвердил'
         bioreactor_reason: 'Причина удаления'
+      message:
+        text: 'Текст сообщения'
+        author: 'Автор'
+        useragent: 'Юзер-агент'

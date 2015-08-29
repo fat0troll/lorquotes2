@@ -40,6 +40,9 @@ ru:
       title: 'Статистика'
       nickname: 'Ник'
       count: 'Количество цитат'
+    talks:
+      title: 'Толксы'
+      about_html: 'Здесь вы можете высказывать свои пожелания, касающиеся квотесов, а так же обсуждать цитаты. Для сообщений о багах предпочтительнее пользоваться <a href="https://github.com/fat0troll/lorquotes2/issues">багтрекером</a>.'
     quote:
       approved_by: 'Цитата была одобрена %{approver}.'
       bioreactored_by: 'Цитата удалена %{approver} по причине %{reason}.'
@@ -61,6 +64,16 @@ ru:
       edit_success: 'Цитата отредактирована успешно.'
       approve_success: 'Цитата успешно подтверждена.'
       bioreactor_success: 'Цитата отправлена в биореактор. Туда ей и дорога.'
+  message:
+    add:
+      title: 'Добавить сообщение'
+      action: 'Добавить'
+    messages:
+      success: 'Ваше сообщение добавлено.'
+      destroyed: 'Сообщение удалено'
+      destroy_warning: 'Вы действительно хотите удалить сообщение? Это действие невозможно отменить!'
+    actions:
+      destroy: 'Удалить'
   will_paginate:
     previous_label: "&#8592;"
     next_label: "&#8594;"

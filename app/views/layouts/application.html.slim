@@ -34,7 +34,7 @@ html lang="en"
               li= link_to((t 'menu.links.non_approved'), awaiting_quotes_path)
               li= link_to((t 'menu.links.stats'), stats_path)
               li= link_to((t 'menu.links.add_quote'), new_quote_path)
-              li= link_to((t 'menu.links.talks'), '#')
+              li= link_to((t 'menu.links.talks'), messages_path)
               li= link_to((t 'menu.links.about'), about_path)
               - if user_signed_in?
                 li.dropdown
@@ -61,4 +61,4 @@ html lang="en"
 
       hr
       footer
-        p &copy; 2005-2014 devinull, 2015 DoctorSinus
+        p &copy; 2005-2015 devinull, 2015 DoctorSinus

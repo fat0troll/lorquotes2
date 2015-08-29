@@ -1,0 +1,48 @@
+- provide(:title, (t 'strings.talks.title'))
+
+h4
+  = t 'strings.talks.title'
+
+p
+  = t 'strings.talks.about_html'
+
+div.panel.panel-default
+  div.panel-heading
+    h4
+      = t 'message.add.title'
+
+    div.panel-body
+      = form_for @message do |f|
+        div.form-group
+          = f.label :text
+          = f.text_area :text, :class => 'form-control'
+
+        hr
+        = f.submit((t 'message.add.action'), :class => 'btn btn-primary')
+
+= will_paginate @messages, renderer: BootstrapPagination::Rails
+
+- @messages.each do |m|
+  div.well
+    p
+      = simple_format m.text
+
+    p
+      em
+        - if m.author_id == 0
+          | anonymous
+        - else
+          = m.author.nickname
+        | &nbsp;(
+        = m.created_at.strftime('%d.%m.%Y %H:%M:%S')
+        | )&nbsp;
+        - if user_signed_in?
+          - if current_user.moderator
+            | [
+            = link_to((t 'message.actions.destroy'), message_path(m), :method => :delete, :data => { :confirm => (t 'message.messages.destroy_warning') })
+            | ]
+      br
+      small
+        = m.useragent
+
+= will_paginate @messages, renderer: BootstrapPagination::Rails

@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get 'quotes/bioreactor' => 'quotes#bioreactor_index', as: :bioreactor_quotes
   resources :quotes
 
+  resources :messages
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
