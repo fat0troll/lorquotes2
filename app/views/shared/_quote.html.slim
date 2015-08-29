@@ -1,0 +1,39 @@
+div.well
+  div.pull-right
+    p
+      - if user_signed_in?
+        - if current_user.moderator
+          - if quote.pending?
+            | [
+            = link_to((t 'quote.edit.action'), edit_quote_path(quote.id))
+            | ] [
+            = link_to((t 'quote.edit.approve'), approve_quote_path(quote.id))
+            | ] [
+            = link_to((t 'quote.edit.bioreactor'), bioreactor_quote_path(quote.id))
+            | ]
+
+      |[
+      = link_to '#', quote_path(quote.id)
+      | ]
+  - if quote.bioreactored?
+    strong
+      = t 'strings.quote.bioreactored_by', :approver => quote.approver.nickname, :reason => quote.bioreactor_reason
+  p
+    = simple_format quote.trivia
+
+  p
+    em
+      = quote.author
+      | &nbsp;(
+      = link_to '*', author_quotes_path(quote.author)
+      | )&nbsp;
+      = quote.writedate.strftime('%d.%m.%Y %H:%M:%S')
+    | &nbsp;[
+    = link_to((t 'quote.link'), quote.link)
+    | ]
+    - if user_signed_in?
+      - if current_user.moderator
+        - if quote.approved?
+          br
+          small
+            = t 'strings.quote.approved_by', :approver => quote.approver.nickname

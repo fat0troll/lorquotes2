@@ -1,5 +1,9 @@
+- provide(:title, (t 'strings.stats.title'))
+
 h4
   = t 'strings.stats.title'
+
+= will_paginate @stats, renderer: BootstrapPagination::Rails
 
 table.table.table-bordered.table-condensed
   thead
@@ -14,7 +18,9 @@ table.table.table-bordered.table-condensed
     - @stats.each do |row|
       tr
         td
-          = link_to(row[0], "/quotes/by_author/#{row[0]}")
+          = link_to(row[0], author_quotes_path(row[0]))
 
         td
           = row[1]
+
+= will_paginate @stats, renderer: BootstrapPagination::Rails

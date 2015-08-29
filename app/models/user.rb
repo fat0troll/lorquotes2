@@ -25,6 +25,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :approved_quotes, :class_name => 'Quote', :foreign_key => 'approver_id'
+
   attr_accessor :login
 
   validates :nickname, presence: true

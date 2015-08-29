@@ -35,7 +35,7 @@ html lang="en"
               li= link_to((t 'menu.links.stats'), stats_path)
               li= link_to((t 'menu.links.add_quote'), new_quote_path)
               li= link_to((t 'menu.links.talks'), '#')
-              li= link_to((t 'menu.links.about'), '#')
+              li= link_to((t 'menu.links.about'), about_path)
               - if user_signed_in?
                 li.dropdown
                   a.dropdown-toggle data-toggle='dropdown' href='#'

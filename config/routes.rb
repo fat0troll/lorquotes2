@@ -7,9 +7,14 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   get 'stats/' => 'static_pages#stats', as: :stats
+  get 'about/' => 'static_pages#about', as: :about
 
   get 'quotes/awaiting' => 'quotes#awaiting', as: :awaiting_quotes
   get 'quotes/by_author/:author' => 'quotes#by_author', as: :author_quotes
+  get 'quotes/:id/approve' => 'quotes#approve', as: :approve_quote
+  get 'quotes/:id/bioreactor' => 'quotes#bioreactor_edit', as: :bioreactor_quote
+  patch 'quotes/:id/devnull' => 'quotes#bioreactor_update', as: :devnull_quote
+  get 'quotes/bioreactor' => 'quotes#bioreactor_index', as: :bioreactor_quotes
   resources :quotes
 
   # Example of regular route:

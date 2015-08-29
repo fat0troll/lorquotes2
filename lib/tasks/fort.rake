@@ -7,8 +7,9 @@ namespace :fort do
       trivia = quote.split("\n--")[0]
       author = quote.split("\n--")[1].split("(li")[0]
       # all other info isn't available in fortunka. We use this just as lorem ipsum, not as an actual importer
-      q = Quote.new(:trivia => trivia, :author => author, :link => 'https://www.linux.org.ru', :writedate => DateTime.now(), :approved => true, :approver_id => 1)
+      q = Quote.new(:trivia => trivia, :author => author, :link => 'https://www.linux.org.ru', :writedate => DateTime.now(), :approver_id => 1)
       q.save!
+      q.approve
     end
   end
 end

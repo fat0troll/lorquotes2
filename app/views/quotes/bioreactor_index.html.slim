@@ -1,0 +1,9 @@
+- provide(:title, (t 'strings.bioreactor.title'))
+
+h4
+  = t 'strings.bioreactor.title'
+p
+  = t 'strings.bioreactor.quotes_count'
+
+- @quotes.each do |q|
+  = render partial: 'shared/quote', locals: {quote: q}

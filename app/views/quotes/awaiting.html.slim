@@ -1,24 +1,16 @@
+- provide(:title, @title)
+
 h4
   = t 'strings.awaiting.title'
 p
   = t 'strings.awaiting.quotes_count', :count => @count
 
+p
+  = t 'strings.awaiting.quotes_bioreactor_html'
+
 = will_paginate @quotes, renderer: BootstrapPagination::Rails
 
 - @quotes.each do |q|
-  div.well
-    p
-      = simple_format q.trivia
-
-    p
-      em
-        = q.author
-        | &nbsp;(
-        = link_to '*', '#'
-        | )&nbsp;
-        = q.writedate.strftime('%d.%m.%Y %H:%M:%S')
-        | &nbsp;(
-        = link_to((t 'quote.link'), q.link)
-        | )
+  = render partial: 'shared/quote', locals: {quote: q}
 
 = will_paginate @quotes, renderer: BootstrapPagination::Rails

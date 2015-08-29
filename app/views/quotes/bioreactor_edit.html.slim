@@ -1,0 +1,20 @@
+div.panel.panel-default
+  div.panel-heading
+    h4
+      = t 'quote.edit.title'
+
+  div.panel-body
+    div.errors
+    - if @quote.errors.any?
+      ul
+      - @quote.errors.full_messages.each do |msg|
+        li= msg
+
+    = form_for @quote, :url => :devnull_quote do |f|
+
+      div.form-group
+        = f.label :bioreactor_reason
+        = f.text_field :bioreactor_reason, :class => 'form-control'
+
+      hr
+      = f.submit((t 'quote.edit.bioreactor'), :class => 'btn btn-primary')
