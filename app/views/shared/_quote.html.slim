@@ -19,7 +19,15 @@ div.well
     strong
       = t 'strings.quote.bioreactored_by', :approver => quote.approver.nickname, :reason => quote.bioreactor_reason
   p
-    = simple_format quote.trivia
+    - quote.trivia.split("\n").each do |string|
+      - if string.starts_with? '>' # quote
+        em
+          = simple_format(string)
+      - elsif string.starts_with? ('Re:', 'RE:', 're:') # header
+        strong
+          = simple_format(string)
+      - else
+        = simple_format(string)
 
   p
     em

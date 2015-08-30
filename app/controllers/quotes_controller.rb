@@ -1,5 +1,5 @@
 class QuotesController < ApplicationController
-  before_filter :check_moder, :except => [:by_author, :awaiting, :index, :show, :create, :new]
+  before_filter :check_moder, :except => [:by_author, :awaiting, :index, :show, :create, :new, :bioreactor_index]
 
   def check_moder
     if user_signed_in?
