@@ -23,7 +23,7 @@ div.well
       - if string.starts_with? '>' # quote
         em
           = simple_format(string)
-      - elsif string.starts_with? ('Re:', 'RE:', 're:') # header
+      - elsif string.starts_with?('Re:', 'RE:', 're:') # header
         strong
           = simple_format(string)
       - else
